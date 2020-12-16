@@ -3,11 +3,14 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
-  const [outputText, setOutputText] = useState('Open up App.js to start working on your app!');
+  const origText = 'Press the button to change the text';
+  const newText = 'Hello world!!';
+  const [outputText, setOutputText] = useState(origText);
   return (
     <View style={styles.container}>
       <Text>{outputText}</Text>
-      <Button title="Change Text"onPress={() => setOutputText('Hello world!!')} />
+      <Button title="Change Text" onPress={() => setOutputText(newText)} />
+      <Button title="Restore Text" onPress={ () => setOutputText(origText)} />
       <StatusBar style="auto" />
     </View>
   );
